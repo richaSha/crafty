@@ -1,0 +1,15 @@
+<h1>Welcome To Crafty!</h1>
+<% if @craft.any? %>
+  <% @craft.each do |craft| %>
+    <% if craft.images.any? %>
+      <%= link_to image_tag(craft.images.photo.url, class: 'media-object'), image.photo.url, target: '_blank' %>
+    <% else %>
+      <%= image_tag "drfault.jpg" %>
+    <% end %>
+    <%= craft.title %>
+    <br>
+    <hr>
+    <br>
+  <% end %>
+<% else %>
+<% end %>
