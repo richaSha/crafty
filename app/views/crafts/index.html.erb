@@ -3,7 +3,7 @@
   <% @craft.each do |craft| %>
   <div class="craft_holder">
     <% if craft.images.any? %>
-      <%= link_to image_tag(craft.images.photo.url, class: 'media-object'), image.photo.url, target: '_blank' %>
+      <%= image_tag craft.images[0].photo.url %>
     <% else %>
       <%= image_tag "drfault.jpg" , :class => "craft_img"%>
     <% end %>
