@@ -4,5 +4,10 @@ class CraftsController < ApplicationController
     @craft = Craft.all()
   end
 
+  def show
+    @craft = Craft.find(params[:id])
+    @review = @craft.reviews.new
+  end
+
 
 end

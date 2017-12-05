@@ -33,7 +33,7 @@ describe User do
     fill_in "password_confirmation", with: "123456"
     click_button 'Sign Up'
     visit "/signup"
-    expect(page).to have_content "Welcome!"
+    expect(page).to have_content "test"
   end
 
 end

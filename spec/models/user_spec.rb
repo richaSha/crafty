@@ -4,6 +4,7 @@ describe User do
   it { should validate_presence_of :username }
   it { should validate_presence_of :email }
   it { should validate_uniqueness_of :email }
+  it { should have_many :reviews }
   it 'should show new name' do
     user = FactoryBot.create(:user, :username => "Dan")
     user.username.should eq "Dan"

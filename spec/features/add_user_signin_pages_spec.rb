@@ -30,7 +30,7 @@ describe User do
     fill_in "password", with: "richa123"
     click_button 'Sign in'
     visit '/signin'
-    expect(page).to have_content "Welcome!"
+    expect(page).to have_content "Welcome"
   end
 
 end

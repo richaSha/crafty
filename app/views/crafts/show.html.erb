@@ -1,0 +1,24 @@
+<h1>Craft detail</h1>
+<div class="craft_holder">
+  <% if @craft.images.any? %>
+    <%= link_to image_tag(@craft.images.photo.url, class: 'media-object'), image.photo.url, target: '_blank' %>
+  <% else %>
+    <%= image_tag "drfault.jpg" , :class => "craft_img"%>
+  <% end %>
+</div>
+<h2>Title: <%=  @craft.title %></h2>
+<h2>Price: $ <%=  @craft.price %></h2>
+<h2>Description: <%=  @craft.dcription %></h2>
+<h2>Reviews</h2>
+<% if @craft.reviews.any? %>
+  <% @craft.reviews.each do |reviews| %>
+    <%= reviews.review %>
+  <% end %>
+<% end %>
+<% if current_user %>
+  <%= form_for [ @craft, @review] do |f| %>
+  <%= f.label "Review" %>
+  <%= f.text_field :review, id: "password_confirmation" %>
+  <%= f.submit "Add" %>
+  <% end %>
+<% end %>

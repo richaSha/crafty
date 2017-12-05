@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-ujs'
 gem 'bcrypt'
 gem "paperclip", "~> 5.0.0"
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
+gem 'rails_admin', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
